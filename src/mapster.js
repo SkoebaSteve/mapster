@@ -3,7 +3,7 @@
   var Mapster = (function() {
 
     function Mapster(selector, opts) {
-      var element = document.getElementById(selector);
+      var element = document.querySelector(selector);
 
       if (!opts.zoom) {
         opts.zoom = 16;
@@ -66,7 +66,7 @@
       },
 
      setPlaces: function(selector, opts) {
-        var element = document.getElementById(selector),
+        var element = document.querySelector(selector),
             places = new google.maps.places.Autocomplete(element, opts.places);
         
         this._attachEvents(places, opts.events);
@@ -182,7 +182,7 @@
           return marker.getVisible();
         });
 
-        document.getElementById(selector).innerHTML = visibleMarkers.length;
+        document.querySelector(selector).innerHTML = visibleMarkers.length;
       }
     };
 

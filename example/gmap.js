@@ -5,7 +5,7 @@ var MAP,
 $(document).ready(function() {
 
   // Initialize & Create the google map on DOM element ID 'map-canvas'.
-  MAP = Mapster.create('map-canvas', {
+  MAP = Mapster.create('#map-canvas', {
     center: {
       lat: -37.818667,
       lng: 144.971466
@@ -14,7 +14,7 @@ $(document).ready(function() {
   });
 
   // Hook the Google Place Auto-Complete utility on input with ID 'txtPlaces'.
-  MAP.setPlaces('txtPlaces', {
+  MAP.setPlaces('#txtPlaces', {
     events: [{
       name: 'place_changed',
       callback: function(e, places){
@@ -42,7 +42,7 @@ $(document).ready(function() {
 
   seedData();
 
-  MAP.visibleMarkersCount('total-result');
+  MAP.visibleMarkersCount('#total-result');
 
 })
 
@@ -123,6 +123,6 @@ $('input[type="checkbox"]').on('change', function() {
 
   MAP.markerClusterer.repaint();
 
-  MAP.visibleMarkersCount('total-result');
+  MAP.visibleMarkersCount('#total-result');
 
 });
